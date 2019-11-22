@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', '\App\Http\Controllers\HomeController@index');
+Route::get('/todolist', '\App\Http\Controllers\HomeController@list');
+Route::post('/add-todo', '\App\Http\Controllers\HomeController@store');
+Route::delete('/delete-todo/{id}', '\App\Http\Controllers\HomeController@destroy');
